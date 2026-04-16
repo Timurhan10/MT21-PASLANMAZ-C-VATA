@@ -74,276 +74,282 @@
         <button class="filter-btn" data-filter="pim">Pim & Flanş</button>
       </div>
 
+      <!-- Fotoğraf yükleme bilgi notu -->
+      <div style="background:var(--bg-card); border:1px solid rgba(74,128,170,0.25); border-radius:8px; padding:12px 16px; margin-bottom:24px; display:flex; align-items:center; gap:10px;">
+        <span style="font-size:1.1rem;">📷</span>
+        <span style="font-size:0.84rem; color:var(--text-muted);">Ürün kartının üzerine gelin ve <strong style="color:var(--steel-light);">Fotoğraf Ekle</strong> butonuna tıklayarak kendi fotoğrafınızı yükleyebilirsiniz. Fotoğraflar tarayıcınızda saklanır.</span>
+      </div>
+
       <!-- ÜRÜN IZGARASI -->
       <div class="products-grid" id="productsGrid">
 
         <!-- CIVATA -->
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩<span class="product-badge">Çok Satan</span></div>
+        <div class="product-card" data-category="civata" data-product-id="u-1">
+          <div class="product-img">🔩<span class="product-badge">Çok Satan</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-1')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-1',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Altıgen Başlı Tam Dişli Civata – DIN 933</h3>
             <p>Tam dişli altıgen başlı civata. M4–M30, 10–300 mm boy seçenekleri.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 933</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 933</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩</div>
+        <div class="product-card" data-category="civata" data-product-id="u-2">
+          <div class="product-img">🔩
+            <div class="img-upload-overlay" onclick="triggerUpload('u-2')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-2',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Altıgen Başlı Kısmi Dişli Civata – DIN 931</h3>
             <p>Kısmi dişli, yüksek mukavemetli civata. Makine ve yapı uygulamaları.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 931</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 931</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩</div>
+        <div class="product-card" data-category="civata" data-product-id="u-3">
+          <div class="product-img">🔩
+            <div class="img-upload-overlay" onclick="triggerUpload('u-3')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-3',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Flanşlı Altıgen Civata – DIN 6921</h3>
             <p>Geniş flanşlı civata. Rondela gerektirmeyen, pratik montaj imkânı.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 6921</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 6921</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩<span class="product-badge">Yeni</span></div>
+        <div class="product-card" data-category="civata" data-product-id="u-4">
+          <div class="product-img">🔩<span class="product-badge">Yeni</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-4')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-4',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Alyan (İç Altıgen) Civata – DIN 912</h3>
             <p>Silindirik başlı, iç altıgen civata. Yüksek tork kapasitesi.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 912</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 912</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩</div>
+        <div class="product-card" data-category="civata" data-product-id="u-5">
+          <div class="product-img">🔩
+            <div class="img-upload-overlay" onclick="triggerUpload('u-5')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-5',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Yuvarlak Başlı Kare Boyunlu Civata – DIN 603</h3>
             <p>Carriage bolt. Ahşap ve metal bağlantılarında sık kullanılır.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 603</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 603</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="civata">
-          <div class="product-img">🔩</div>
+        <div class="product-card" data-category="civata" data-product-id="u-6">
+          <div class="product-img">🔩
+            <div class="img-upload-overlay" onclick="triggerUpload('u-6')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-6',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Havşa Başlı İç Altıgen Civata – DIN 7991</h3>
             <p>Düz yüzey gerektiren uygulamalar için gömme başlı civata.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 7991</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 7991</span></div>
           </div>
         </div>
 
         <!-- SOMUN -->
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧</div>
+        <div class="product-card" data-category="somun" data-product-id="u-7">
+          <div class="product-img">🔧
+            <div class="img-upload-overlay" onclick="triggerUpload('u-7')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-7',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Altıgen Somun – DIN 934</h3>
             <p>Standart altıgen somun. Her ölçüde stokta mevcuttur. M3–M30.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 934</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 934</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧</div>
+        <div class="product-card" data-category="somun" data-product-id="u-8">
+          <div class="product-img">🔧
+            <div class="img-upload-overlay" onclick="triggerUpload('u-8')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-8',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>İnce Altıgen Somun – DIN 439</h3>
             <p>Düşük profilli somun. Dar alanlarda ve kilit somun olarak kullanılır.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 439</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 439</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧</div>
+        <div class="product-card" data-category="somun" data-product-id="u-9">
+          <div class="product-img">🔧
+            <div class="img-upload-overlay" onclick="triggerUpload('u-9')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-9',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Kelebek (Kanatlı) Somun – DIN 315</h3>
             <p>El ile sıkılabilen kanatlı somun. Hızlı söküp takma gerektiren yerler için.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 315</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 315</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧<span class="product-badge">Çok Satan</span></div>
+        <div class="product-card" data-category="somun" data-product-id="u-10">
+          <div class="product-img">🔧<span class="product-badge">Çok Satan</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-10')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-10',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Flanşlı Somun – DIN 6923</h3>
             <p>Entegre rondelaya sahip somun. Titreşimli ortamlar için ideal.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 6923</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 6923</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧</div>
+        <div class="product-card" data-category="somun" data-product-id="u-11">
+          <div class="product-img">🔧
+            <div class="img-upload-overlay" onclick="triggerUpload('u-11')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-11',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Kilit Somun (Naylonlu) – DIN 985</h3>
             <p>Naylon kilit halkası sayesinde kendiliğinden gevşemez. Titreşim önleyici.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 985</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 985</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="somun">
-          <div class="product-img">🔧</div>
+        <div class="product-card" data-category="somun" data-product-id="u-12">
+          <div class="product-img">🔧
+            <div class="img-upload-overlay" onclick="triggerUpload('u-12')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-12',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Kepçe (Kapaklı) Somun – DIN 1587</h3>
-            <p>Estetik görünüm ve koruma sağlayan kapaklı somun. Mobilya ve dekorasyonda kullanılır.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 1587</span>
-            </div>
+            <p>Estetik görünüm ve koruma sağlayan kapaklı somun.</p>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 1587</span></div>
           </div>
         </div>
 
         <!-- RONDELA -->
-        <div class="product-card" data-category="rondela">
-          <div class="product-img">⭕</div>
+        <div class="product-card" data-category="rondela" data-product-id="u-13">
+          <div class="product-img">⭕
+            <div class="img-upload-overlay" onclick="triggerUpload('u-13')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-13',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Düz Rondela – DIN 125</h3>
             <p>Standart düz rondela. Geniş yüzey dağılımı sağlar. M3–M30.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 125</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 125</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="rondela">
-          <div class="product-img">⭕<span class="product-badge">Çok Satan</span></div>
+        <div class="product-card" data-category="rondela" data-product-id="u-14">
+          <div class="product-img">⭕<span class="product-badge">Çok Satan</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-14')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-14',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Yaylı Rondela – DIN 127</h3>
             <p>Titreşim ve gevşemeye karşı elastik kilitlenme sağlayan yaylı rondela.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 127</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 127</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="rondela">
-          <div class="product-img">⭕</div>
+        <div class="product-card" data-category="rondela" data-product-id="u-15">
+          <div class="product-img">⭕
+            <div class="img-upload-overlay" onclick="triggerUpload('u-15')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-15',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Geniş Seri Rondela – DIN 9021</h3>
             <p>Büyük dış çaplı rondela. Büyük delikler ve yumuşak malzemeler için.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 9021</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 9021</span></div>
           </div>
         </div>
 
         <!-- VİDA -->
-        <div class="product-card" data-category="vida">
-          <div class="product-img">🔨</div>
+        <div class="product-card" data-category="vida" data-product-id="u-16">
+          <div class="product-img">🔨
+            <div class="img-upload-overlay" onclick="triggerUpload('u-16')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-16',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Yuvarlak Başlı Makine Vidası – DIN 84</h3>
             <p>Silindirik başlı makine vidası. M2–M10 arası boyutlarda mevcuttur.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 84</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 84</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="vida">
-          <div class="product-img">🔨<span class="product-badge">Yeni</span></div>
+        <div class="product-card" data-category="vida" data-product-id="u-17">
+          <div class="product-img">🔨<span class="product-badge">Yeni</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-17')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-17',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Sac Vidası – DIN 7981</h3>
             <p>Metal sac malzemelere direk vidalama. Keskin diş profili ile güçlü tutma.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 7981</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 7981</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="vida">
-          <div class="product-img">🔨</div>
+        <div class="product-card" data-category="vida" data-product-id="u-18">
+          <div class="product-img">🔨
+            <div class="img-upload-overlay" onclick="triggerUpload('u-18')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-18',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Havşa Başlı Sac Vidası – DIN 7982</h3>
             <p>Yassı başlı sac vidası. Görünür yüzeylerde düz görünüm sağlar.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 7982</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 7982</span></div>
           </div>
         </div>
 
         <!-- SAPLAMA -->
-        <div class="product-card" data-category="saplama">
-          <div class="product-img">📏</div>
+        <div class="product-card" data-category="saplama" data-product-id="u-19">
+          <div class="product-img">📏
+            <div class="img-upload-overlay" onclick="triggerUpload('u-19')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-19',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Diş Çubuğu – DIN 975</h3>
             <p>Her iki ucundan tam diş açılmış çubuk. 1 metre uzunlukta, kesilebilir.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 975</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 975</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="saplama">
-          <div class="product-img">📏<span class="product-badge">Çok Satan</span></div>
+        <div class="product-card" data-category="saplama" data-product-id="u-20">
+          <div class="product-img">📏<span class="product-badge">Çok Satan</span>
+            <div class="img-upload-overlay" onclick="triggerUpload('u-20')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-20',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>İki Taraflı Saplama – DIN 939</h3>
             <p>Her iki ucu diş açılmış, merkez kısmı düz saplama. Flanş bağlantıları için.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 939</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 939</span></div>
           </div>
         </div>
 
         <!-- PİM & FLANŞ -->
-        <div class="product-card" data-category="pim">
-          <div class="product-img">🔗</div>
+        <div class="product-card" data-category="pim" data-product-id="u-21">
+          <div class="product-img">🔗
+            <div class="img-upload-overlay" onclick="triggerUpload('u-21')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-21',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Silindirik Pim – DIN 7</h3>
             <p>Hassas toleranslı silindirik pim. Makine parçalarının konumlandırılmasında kullanılır.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 7</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 7</span></div>
           </div>
         </div>
 
-        <div class="product-card" data-category="pim">
-          <div class="product-img">🔗</div>
+        <div class="product-card" data-category="pim" data-product-id="u-22">
+          <div class="product-img">🔗
+            <div class="img-upload-overlay" onclick="triggerUpload('u-22')"><div class="upload-icon">📷</div><span>Fotoğraf Ekle</span></div>
+            <button class="img-remove-btn" onclick="removePhoto('u-22',event)" title="Kaldır">✕</button>
+          </div>
           <div class="product-info">
             <h3>Konik Pim – DIN 1</h3>
             <p>1:50 koniklik oranında konik pim. Kendiliğinden kilitlenen form.</p>
-            <div class="product-meta">
-              <span class="product-material">A2 / A4</span>
-              <span class="product-link">DIN 1</span>
-            </div>
+            <div class="product-meta"><span class="product-material">A2 / A4</span><span class="product-link">DIN 1</span></div>
           </div>
         </div>
 

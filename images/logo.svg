@@ -1,68 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 108" width="300" height="108">
   <defs>
-    <!-- Metallic silver gradient for background shape -->
-    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4A5568;stop-opacity:1" />
-      <stop offset="30%" style="stop-color:#718096;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#A0AEC0;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#718096;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2D3748;stop-opacity:1" />
+    <!-- Bolt head metallic gradient -->
+    <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#D8E0E8"/>
+      <stop offset="25%"  stop-color="#F0F4F8"/>
+      <stop offset="55%"  stop-color="#C0CAD4"/>
+      <stop offset="85%"  stop-color="#8A96A2"/>
+      <stop offset="100%" stop-color="#6A7880"/>
     </linearGradient>
-    <!-- Blue tech accent gradient -->
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#2B6CB0;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4299E1;stop-opacity:1" />
+    <!-- Shank metallic gradient (left-right) -->
+    <linearGradient id="shankGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6A7880"/>
+      <stop offset="25%"  stop-color="#B8C4CE"/>
+      <stop offset="50%"  stop-color="#E8EEF4"/>
+      <stop offset="75%"  stop-color="#B0BCC8"/>
+      <stop offset="100%" stop-color="#6A7880"/>
     </linearGradient>
-    <!-- Text metallic gradient -->
+    <!-- Washer face gradient -->
+    <linearGradient id="washerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#7A8894"/>
+      <stop offset="100%" stop-color="#505A64"/>
+    </linearGradient>
+    <!-- MT21 text gradient -->
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#E2E8F0;stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#FFFFFF;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#CBD5E0;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#A0AEC0;stop-opacity:1" />
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="45%"  stop-color="#EEF2F6"/>
+      <stop offset="100%" stop-color="#A8B4C0"/>
     </linearGradient>
-    <!-- Shine overlay -->
-    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.15" />
-      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.1" />
+    <!-- Blue line gradient -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#3A6A9A"/>
+      <stop offset="100%" stop-color="#5A9ACA"/>
     </linearGradient>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    <!-- Drop shadow filter -->
+    <filter id="boltDrop" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.45"/>
     </filter>
-    <clipPath id="hexClip">
-      <polygon points="40,5 70,5 80,20 80,60 70,75 40,75 30,60 30,20"/>
-    </clipPath>
+    <!-- Head shine filter -->
+    <filter id="headShine">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+    </filter>
   </defs>
 
-  <!-- Hexagon shape (bolt head reference) -->
-  <polygon points="40,4 71,4 82,22 82,58 71,76 40,76 29,58 29,22"
-           fill="url(#metalGrad)" filter="url(#shadow)"/>
-  <!-- Hexagon shine -->
-  <polygon points="40,4 71,4 82,22 82,38 55,4"
-           fill="url(#shineGrad)"/>
-  <!-- Blue accent line on hex -->
-  <line x1="29" y1="39" x2="82" y2="39" stroke="url(#blueGrad)" stroke-width="2.5" opacity="0.8"/>
+  <!-- ══════════════════════════════════════════
+       DIN 933 HEX BOLT — SIDE VIEW
+       Bolt head: x 5–87, y 4–38
+       Washer face: x 2–90, y 38–43
+       Shank: x 37–55, y 43–100
+       Tip: y 100–107
+  ══════════════════════════════════════════ -->
 
-  <!-- MT21 text inside hexagon -->
-  <text x="55.5" y="29" font-family="'Arial Black', 'Helvetica Neue', sans-serif"
-        font-size="14" font-weight="900" fill="url(#textGrad)"
-        text-anchor="middle" letter-spacing="0">MT</text>
-  <text x="55.5" y="62" font-family="'Arial Black', 'Helvetica Neue', sans-serif"
-        font-size="22" font-weight="900" fill="url(#textGrad)"
-        text-anchor="middle" letter-spacing="1">21</text>
+  <!-- ── BOLT HEAD (chamfered rectangle) ── -->
+  <path d="M 14,4 L 78,4 L 87,13 L 87,38 L 5,38 L 5,13 Z"
+        fill="url(#headGrad)" stroke="#5A6870" stroke-width="1"
+        filter="url(#boltDrop)"/>
 
-  <!-- Company name text -->
-  <text x="100" y="32" font-family="'Arial Black', 'Helvetica Neue', sans-serif"
-        font-size="20" font-weight="900" fill="url(#textGrad)"
+  <!-- Head top shine -->
+  <path d="M 14,4 L 78,4 L 87,13 L 55,13 L 46,4 Z"
+        fill="rgba(255,255,255,0.16)"/>
+
+  <!-- Hex face dividing lines (shows hex faces on side) -->
+  <line x1="5"  y1="13" x2="5"  y2="38" stroke="rgba(0,0,0,0.18)"       stroke-width="0.7"/>
+  <line x1="87" y1="13" x2="87" y2="38" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
+  <!-- Center face line -->
+  <line x1="46" y1="4"  x2="46" y2="38" stroke="rgba(120,140,160,0.20)" stroke-width="0.6"/>
+  <!-- Second face line -->
+  <line x1="26" y1="4"  x2="26" y2="38" stroke="rgba(120,140,160,0.15)" stroke-width="0.5"/>
+  <line x1="66" y1="4"  x2="66" y2="38" stroke="rgba(120,140,160,0.15)" stroke-width="0.5"/>
+
+  <!-- ── WASHER FACE (bearing face - slightly wider) ── -->
+  <rect x="2" y="38" width="88" height="5" rx="1"
+        fill="url(#washerGrad)" stroke="#404850" stroke-width="0.7"/>
+
+  <!-- ── SHANK (threaded) ── -->
+  <rect x="37" y="43" width="18" height="57" rx="1"
+        fill="url(#shankGrad)"/>
+
+  <!-- Thread lines — each thread = 2 lines (crest + root) -->
+  <!-- Crest (highlight) -->
+  <line x1="37" y1="49"  x2="55" y2="52.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="55"  x2="55" y2="58.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="61"  x2="55" y2="64.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="67"  x2="55" y2="70.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="73"  x2="55" y2="76.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="79"  x2="55" y2="82.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="85"  x2="55" y2="88.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <line x1="37" y1="91"  x2="55" y2="94.5" stroke="rgba(220,234,248,0.55)" stroke-width="0.9"/>
+  <!-- Root (shadow) -->
+  <line x1="37" y1="52"  x2="55" y2="55.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="58"  x2="55" y2="61.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="64"  x2="55" y2="67.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="70"  x2="55" y2="73.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="76"  x2="55" y2="79.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="82"  x2="55" y2="85.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="88"  x2="55" y2="91.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+  <line x1="37" y1="94"  x2="55" y2="97.5" stroke="rgba(50,65,75,0.55)"   stroke-width="1.1"/>
+
+  <!-- Shank edge lines -->
+  <line x1="37" y1="43" x2="37" y2="100" stroke="rgba(50,65,75,0.5)"      stroke-width="0.8"/>
+  <line x1="55" y1="43" x2="55" y2="100" stroke="rgba(200,220,235,0.25)"  stroke-width="0.6"/>
+
+  <!-- ── BOLT TIP (chamfered) ── -->
+  <path d="M 37,100 L 46,107 L 55,100 Z"
+        fill="#5A6870" stroke="#404850" stroke-width="0.7"/>
+
+  <!-- ══════════════════════════════════════════
+       TEXT — MT21 + SUBTITLE
+  ══════════════════════════════════════════ -->
+
+  <!-- MT21 main text -->
+  <text x="110" y="56"
+        font-family="'Arial Black','Impact','Helvetica Neue',sans-serif"
+        font-size="46" font-weight="900"
+        fill="url(#textGrad)"
         letter-spacing="2">MT21</text>
-  <!-- Divider line -->
-  <line x1="100" y1="38" x2="272" y2="38" stroke="url(#blueGrad)" stroke-width="1.5"/>
-  <!-- Subtitle -->
-  <text x="100" y="55" font-family="'Arial', 'Helvetica Neue', sans-serif"
-        font-size="11" font-weight="400" fill="#A0AEC0"
-        letter-spacing="3.5">PASLANMAZ CİVATA</text>
-  <!-- Tagline -->
-  <text x="100" y="70" font-family="'Arial', sans-serif"
-        font-size="8.5" font-weight="300" fill="#718096"
-        letter-spacing="1.5">STAINLESS FASTENERS</text>
+
+  <!-- Blue separator line -->
+  <line x1="108" y1="65" x2="296" y2="65"
+        stroke="url(#blueGrad)" stroke-width="1.8"/>
+
+  <!-- PASLANMAZ CİVATA -->
+  <text x="110" y="82"
+        font-family="'Arial','Helvetica Neue',sans-serif"
+        font-size="12.5" font-weight="600"
+        fill="#90A0B0"
+        letter-spacing="4.5">PASLANMAZ CİVATA</text>
+
+  <!-- STAINLESS FASTENERS -->
+  <text x="110" y="97"
+        font-family="'Arial','Helvetica Neue',sans-serif"
+        font-size="9" font-weight="400"
+        fill="#60707C"
+        letter-spacing="3.5">STAINLESS FASTENERS</text>
 </svg>

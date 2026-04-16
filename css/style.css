@@ -4,23 +4,24 @@
 ============================================ */
 
 :root {
-  --bg-dark:       #0B0F1A;
-  --bg-card:       #131929;
-  --bg-section:    #0F1420;
-  --steel-light:   #C8D6E5;
-  --steel-mid:     #8FA3B8;
-  --steel-dark:    #4A5F74;
-  --blue-accent:   #3B82F6;
-  --blue-bright:   #60A5FA;
-  --blue-glow:     rgba(59,130,246,0.18);
-  --white:         #F0F4F8;
-  --text-main:     #D1DCE8;
-  --text-muted:    #7A94A8;
-  --border:        rgba(200,214,229,0.12);
-  --gradient-metal: linear-gradient(135deg, #1E2D3D 0%, #0B0F1A 50%, #1A2535 100%);
-  --gradient-btn:  linear-gradient(135deg, #2563EB, #3B82F6);
-  --shadow:        0 8px 32px rgba(0,0,0,0.5);
-  --shadow-card:   0 4px 20px rgba(0,0,0,0.4);
+  /* Paslanmaz Çelik Renk Teması — koyu çelik gri, siyah değil */
+  --bg-dark:       #22262C;
+  --bg-card:       #2A2E36;
+  --bg-section:    #262A30;
+  --steel-light:   #C8D0D8;
+  --steel-mid:     #8A949E;
+  --steel-dark:    #56606A;
+  --blue-accent:   #4A80AA;
+  --blue-bright:   #6AA0C8;
+  --blue-glow:     rgba(74,128,170,0.16);
+  --white:         #E8ECF0;
+  --text-main:     #C4CCD4;
+  --text-muted:    #78848E;
+  --border:        rgba(180,192,204,0.14);
+  --gradient-metal: linear-gradient(135deg, #2A2E36 0%, #1E2228 50%, #262A30 100%);
+  --gradient-btn:  linear-gradient(135deg, #3A6A9A, #5A8ABE);
+  --shadow:        0 8px 32px rgba(0,0,0,0.45);
+  --shadow-card:   0 4px 20px rgba(0,0,0,0.35);
   --radius:        10px;
   --transition:    all 0.3s ease;
 }
@@ -81,7 +82,7 @@ header {
   justify-content: space-between;
   height: 70px;
 }
-.logo img { height: 52px; width: auto; }
+.logo img { height: 60px; width: auto; }
 
 nav { display: flex; align-items: center; gap: 6px; }
 nav a {
@@ -364,18 +365,68 @@ nav a:hover, nav a.active {
 .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(59,130,246,0.3); }
 .product-img {
   height: 200px;
-  background: linear-gradient(135deg, #131929, #1a2540);
+  background: linear-gradient(135deg, #262A32, #1E2228);
   display: flex; align-items: center; justify-content: center;
   font-size: 3.5rem;
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .product-img::after {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, rgba(59,130,246,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(74,128,170,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
+.product-img img.uploaded-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/* Fotoğraf yükleme overlay */
+.img-upload-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  z-index: 2;
+  transition: background 0.25s ease;
+  opacity: 0;
+}
+.product-card:hover .img-upload-overlay { opacity: 1; background: rgba(0,0,0,0.55); }
+.img-upload-overlay .upload-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(4px);
+  transition: var(--transition);
+}
+.img-upload-overlay:hover .upload-icon { background: rgba(74,128,170,0.5); border-color: var(--blue-bright); }
+.img-upload-overlay span {
+  font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+/* Remove photo button */
+.img-remove-btn {
+  position: absolute; top: 8px; right: 8px;
+  z-index: 3;
+  background: rgba(220,50,50,0.8);
+  border: none; border-radius: 50%;
+  width: 26px; height: 26px;
+  color: #fff; font-size: 0.75rem;
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; transition: var(--transition);
+}
+.product-card:hover .img-remove-btn { display: flex; }
+.img-remove-btn:hover { background: rgba(220,50,50,1); }
 .product-badge {
   position: absolute; top: 12px; left: 12px;
   background: var(--gradient-btn);

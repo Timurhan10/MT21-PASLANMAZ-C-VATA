@@ -1,6 +1,82 @@
 // MT21 Paslanmaz Civata — Ana JavaScript Dosyası
 
+// ============================================================
+// FOTOĞRAF YÜKLEME SİSTEMİ (global scope — onclick'ten çağrılır)
+// ============================================================
+var _fileInput = null;
+var _activeProductId = null;
+
+function _getOrCreateFileInput() {
+  if (!_fileInput) {
+    _fileInput = document.createElement('input');
+    _fileInput.type = 'file';
+    _fileInput.accept = 'image/*';
+    _fileInput.style.display = 'none';
+    document.body.appendChild(_fileInput);
+    _fileInput.addEventListener('change', function () {
+      var file = _fileInput.files[0];
+      if (!file || !_activeProductId) return;
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var dataUrl = e.target.result;
+        _applyPhoto(_activeProductId, dataUrl);
+        try { localStorage.setItem('mt21_img_' + _activeProductId, dataUrl); } catch (err) {}
+        _fileInput.value = '';
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  return _fileInput;
+}
+
+function triggerUpload(productId) {
+  _activeProductId = productId;
+  _getOrCreateFileInput().click();
+}
+
+function _applyPhoto(productId, dataUrl) {
+  var card = document.querySelector('[data-product-id="' + productId + '"]');
+  if (!card) return;
+  var imgArea = card.querySelector('.product-img');
+  if (!card || !imgArea) return;
+
+  // Mevcut uploaded img varsa güncelle, yoksa yenisini oluştur
+  var existing = imgArea.querySelector('.uploaded-img');
+  if (!existing) {
+    var img = document.createElement('img');
+    img.className = 'uploaded-img';
+    imgArea.insertBefore(img, imgArea.firstChild);
+    existing = img;
+  }
+  existing.src = dataUrl;
+}
+
+function removePhoto(productId, event) {
+  event.stopPropagation();
+  var card = document.querySelector('[data-product-id="' + productId + '"]');
+  if (!card) return;
+  var img = card.querySelector('.uploaded-img');
+  if (img) img.remove();
+  try { localStorage.removeItem('mt21_img_' + productId); } catch (err) {}
+}
+
+// Sayfa yüklenince kayıtlı fotoğrafları geri yükle
+function _restorePhotos() {
+  try {
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key && key.indexOf('mt21_img_') === 0) {
+        var pid = key.replace('mt21_img_', '');
+        var dataUrl = localStorage.getItem(key);
+        if (dataUrl) _applyPhoto(pid, dataUrl);
+      }
+    }
+  } catch (err) {}
+}
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', function () {
+  _restorePhotos();
 
   // ---- HAMBURGEr MENÜ ----
   var hamburger = document.getElementById('hamburger');
