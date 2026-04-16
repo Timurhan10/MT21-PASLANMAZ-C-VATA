@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim | MT21 Paslanmaz Civata</title>
+  <meta name="description" content="MT21 Paslanmaz Civata iletişim bilgileri ve teklif formu. Paslanmaz çelik bağlantı elemanları için bizimle iletişime geçin." />
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="announcement-bar">
+    🔔 <span>Yakında Online Satış!</span>
+    MT21 e-ticaret platformumuz çok yakında aktif oluyor — bildirim almak için bizi takip edin.
+    <span>📦</span>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="MT21 Paslanmaz Civata Logo" />
+      </a>
+      <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="urunler.html">Ürünler</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html" class="nav-contact-btn active">İletişim</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="urunler.html">Ürünler</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html" class="active">İletişim</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="pre-title">Bizimle İletişime Geçin</div>
+      <h1>Nasıl Yardımcı Olabiliriz?</h1>
+      <p>Teklif almak, teknik bilgi edinmek veya sipariş için bize ulaşın. En kısa sürede yanıt veriyoruz.</p>
+    </div>
+  </div>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="sep">/</span>
+      <span class="current">İletişim</span>
+    </div>
+  </div>
+
+  <main>
+    <div class="section">
+
+      <div class="contact-grid">
+
+        <!-- İLETİŞİM BİLGİLERİ -->
+        <div>
+          <h3 style="font-size:1.3rem; font-weight:700; color:var(--white); margin-bottom:28px;">İletişim Bilgileri</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Adres</h4>
+              <p>İstanbul, Türkiye</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Telefon</h4>
+              <p>+90 (XXX) XXX XX XX</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>E-posta</h4>
+              <p>info@mt21civata.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Çalışma Saatleri</h4>
+              <p>Pazartesi – Cuma: 08:00 – 18:00</p>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:3px;">Cumartesi: 09:00 – 13:00</p>
+            </div>
+          </div>
+
+          <!-- ONLINE SATIŞ BİLDİRİMİ -->
+          <div style="margin-top:36px; background:var(--bg-card); border:1px solid rgba(59,130,246,0.25); border-radius:12px; padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-size:1.4rem;">🛒</span>
+              <h4 style="font-size:1rem; font-weight:700; color:var(--white);">Online Satış Yakında!</h4>
+            </div>
+            <p style="font-size:0.87rem; color:var(--text-muted); line-height:1.7;">
+              E-ticaret platformumuz çok yakında aktif oluyor. Tüm ürünlerimizi online
+              olarak sipariş edebileceksiniz. Şu an için teklif formunu doldurabilir
+              veya doğrudan bizi arayabilirsiniz.
+            </p>
+            <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
+              <span style="width:8px; height:8px; background:#48BB78; border-radius:50%; display:inline-block; animation:pulse 2s ease infinite;"></span>
+              <span style="font-size:0.8rem; font-weight:600; color:#48BB78;">Yakında Aktif Oluyor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEKLİF FORMU -->
+        <div class="form-card">
+          <h3>Teklif / Bilgi Formu</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Ad *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Adınız" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Soyad *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Soyadınız" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Firma Adı</label>
+              <input type="text" id="company" name="company" placeholder="Firma adınız (opsiyonel)" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-posta *</label>
+                <input type="email" id="email" name="email" placeholder="ornek@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Konu *</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Konu seçiniz</option>
+                <option value="teklif">Ürün Teklifi İstiyorum</option>
+                <option value="teknik">Teknik Bilgi / Danışmanlık</option>
+                <option value="ozel">Özel Üretim Talebi</option>
+                <option value="katalog">Katalog Talebi</option>
+                <option value="diger">Diğer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesajınız *</label>
+              <textarea id="message" name="message" placeholder="İhtiyacınızı detaylıca açıklayın. Ürün tipi, malzeme, boyut ve miktar gibi bilgileri paylaşırsanız daha hızlı yanıt verebiliriz." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Formu Gönder →</button>
+          </form>
+          <!-- Başarı mesajı -->
+          <div id="formSuccess" style="display:none; margin-top:20px; background:rgba(72,187,120,0.1); border:1px solid rgba(72,187,120,0.3); border-radius:8px; padding:18px; text-align:center;">
+            <p style="font-size:1.5rem; margin-bottom:8px;">✅</p>
+            <h4 style="color:var(--white); margin-bottom:6px;">Mesajınız Alındı!</h4>
+            <p style="font-size:0.87rem; color:var(--text-muted);">En kısa sürede size geri döneceğiz.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.svg" alt="MT21 Logo" />
+          <p>MT21 Paslanmaz Civata olarak paslanmaz çelik bağlantı elemanları sektöründe güvenilir ve kaliteli hizmet sunmaktayız.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="urunler.html">Ürünler</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün Kategorileri</h4>
+          <ul>
+            <li><a href="urunler.html">Paslanmaz Civata</a></li>
+            <li><a href="urunler.html">Paslanmaz Somun</a></li>
+            <li><a href="urunler.html">Paslanmaz Rondela</a></li>
+            <li><a href="urunler.html">Paslanmaz Vida</a></li>
+            <li><a href="urunler.html">Saplama / Diş Çubuğu</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>İletişim</h4>
+          <p><span>📍</span><span>İstanbul, Türkiye</span></p>
+          <p><span>📞</span><span>+90 (XXX) XXX XX XX</span></p>
+          <p><span>✉️</span><span>info@mt21civata.com</span></p>
+          <p><span>🕐</span><span>Pzt–Cum: 08:00 – 18:00</span></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 MT21 Paslanmaz Civata. Tüm hakları saklıdır.</p>
+        <div class="badges">
+          <span class="badge">ISO 9001</span>
+          <span class="badge">AISI 304</span>
+          <span class="badge">AISI 316</span>
+          <span class="badge">DIN Standartları</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <div class="toast-icon">🛒</div>
+    <div class="toast-body">
+      <h4>Online Satış Geliyor!</h4>
+      <p>E-ticaret sistemimiz çok yakında aktif olacak. Takipte kalın!</p>
+    </div>
+    <button class="toast-close" id="toastClose">✕</button>
+  </div>
+
+  <button class="back-top" id="backTop" title="Yukarı Çık">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
